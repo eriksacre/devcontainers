@@ -55,6 +55,19 @@ mp() {
         return 1
     }
 
+    # Add all files to git
+    git add . || {
+        echo "Error: Git add failed"
+        return 1
+    }
+
+    # Commit changes
+    git commit -m "chore: setup devcontainer" || {
+        echo "Error: Git commit failed"
+        return 1
+    }
+    echo "Git repository initialized and initial commit made."
+
     # Open in VS Code
     code . || {
         echo "Warning: Could not open VS Code. Make sure 'code' command is available in PATH"
