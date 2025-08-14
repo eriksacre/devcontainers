@@ -1,0 +1,30 @@
+{
+  "name": "dotnet-node-devbox",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "forwardPorts": [3000],
+  "remoteUser": "devuser",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "EditorConfig.EditorConfig",
+        "ms-vscode.vscode-node-azure-pack",
+        "yzhang.markdown-all-in-one",
+        "telesoho.vscode-markdown-paste-image"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${env:HOME}/.claude,target=/home/devuser/.claude,type=bind"
+  ],
+  "remoteEnv": {
+    "CLAUDE_CONFIG_DIR": "/home/devuser/.claude"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  }
+}
