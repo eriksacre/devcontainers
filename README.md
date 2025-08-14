@@ -6,7 +6,6 @@ This is a set of devcontainers I use for work & experimentation.
 
 - Windows 11 with WSL2
 - Using Bash in WSL2
-- By convention I'm using a folder called `LinuxProjects` in my WSL2 home folder
 - Claude Code is installed in WSL2. This is relevant as we will mount the `.claude` folder in devcontainers
 - Using VS Code as my editor (actually VS Code Insiders, but 'code' is defined as alias)
 
@@ -26,8 +25,8 @@ The devcontainers are pre-configured to use Claude Code. This assumes you are us
 mp project-name project-type
 ```
 
-- Creates a new project folder in `~/LinuxProjects`
-- inits a git repo
+- Creates a new project folder in the current folder
+- Inits a git repo
 - Setups up devcontainer
 - Opens VS Code
 

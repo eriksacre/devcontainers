@@ -14,18 +14,9 @@ mp() {
     local project_name="$1"
     local project_type="$2"
 
-    # Create the LinuxProjects directory if it doesn't exist
-    mkdir -p ~/LinuxProjects
-
-    # Navigate to LinuxProjects directory
-    cd ~/LinuxProjects || {
-        echo "Error: Could not navigate to ~/LinuxProjects"
-        return 1
-    }
-
     # Check if project directory already exists
     if [ -d "$project_name" ]; then
-        echo "Error: Project '$project_name' already exists in ~/LinuxProjects"
+        echo "Error: Project '$project_name' already exists"
         return 1
     fi
 
