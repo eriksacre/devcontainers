@@ -35,7 +35,7 @@ mp project-name project-type
 ### Adding mp command to your shell
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh >> ~/.bash_profile && source ~/.bash_profile
+curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh >> ~/.bashrc && source ~/.bashrc
 ```
 
 ## The code behind devcontainer setup
