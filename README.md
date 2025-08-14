@@ -32,8 +32,8 @@ mp project-name project-type
 
 ### Supported project types
 
-- bun
-- dotnet8
+- **bun** - Bun JavaScript runtime container
+- **dotnet8** - .NET 8 development container
 
 ### Adding mp command to your shell
 
@@ -85,11 +85,6 @@ chmod +x dc.sh
 # or
 ./dc.sh dotnet8
 ```
-
-## Available Container Types
-
-- **bun** - Bun JavaScript runtime container
-- **dotnet8** - .NET 8 development container
 
 ## After Setup
 
