@@ -1,5 +1,6 @@
-#!/bin/bash
-
+# mp function - version marker start
+# This script is not meant to be run directly.
+# It is intended to be sourced in your shell configuration file (e.g., ~/.bashrc)
 # Make Project (mp) function
 # Usage: mp <project_name> <project_type>
 mp() {
@@ -75,3 +76,8 @@ mp() {
 
     echo "Project '$project_name' created successfully!"
 }
+
+mp_update() {
+    curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh > /tmp/mp_new.sh && sed -i '/# mp function - version marker start/,/# mp function - version marker end/d' ~/.bashrc && cat /tmp/mp_new.sh >> ~/.bashrc && rm /tmp/mp_new.sh && source ~/.bashrc
+}
+# mp function - version marker end

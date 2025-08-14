@@ -2,9 +2,13 @@
 
 This is a set of devcontainers I use for work & experimentation.
 
-## Bash
+## My environment
 
-I am a dinosaur! Bash is just fine for me...
+- Windows 11 with WSL2
+- Using Bash in WSL2
+- By convention I'm using a folder called `LinuxProjects` in my WSL2 home folder
+- Claude Code is installed in WSL2. This is relevant as we will mount the `.claude` folder in devcontainers
+- Using VS Code as my editor (actually VS Code Insiders, but 'code' is defined as alias)
 
 ## Claude Code
 
@@ -14,7 +18,7 @@ The devcontainers are pre-configured to use Claude Code. This assumes you are us
 - Alias `cc`: `claude --dangerously-skip-permissions`
 
 > [!WARNING]
-> The devcontainer has network access! Be very careful with `cc`, as it can wreck havoc!
+> The devcontainer has network access! Be very careful with `cc`, as it can wreack havoc!
 
 ## Quick start
 
@@ -22,7 +26,7 @@ The devcontainers are pre-configured to use Claude Code. This assumes you are us
 mp project-name project-type
 ```
 
-- Creates a new project folder in `~/LinuxProjects` (yup, hardcoded for now, this is my setup)
+- Creates a new project folder in `~/LinuxProjects`
 - inits a git repo
 - Setups up devcontainer
 - Opens VS Code
@@ -38,7 +42,12 @@ mp project-name project-type
 curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh >> ~/.bashrc && source ~/.bashrc
 ```
 
+If you installed the command and you want to update it to the current version: `mp_update`
+
 ## The code behind devcontainer setup
+
+> [!NOTE]
+> When using the mp command, this happens automatically behind the scenes.
 
 Use this one-liner to download and execute the setup script in your project directory:
 
