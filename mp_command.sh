@@ -78,6 +78,6 @@ mp() {
 }
 
 mp_update() {
-    curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh > /tmp/mp_new.sh && awk '/# mp function - version marker start/{skip=1} skip{next} /# mp function - version marker end/{skip=0; next} 1' ~/.bashrc > /tmp/bashrc_clean && mv /tmp/bashrc_clean ~/.bashrc && cat /tmp/mp_new.sh >> ~/.bashrc && rm /tmp/mp_new.sh && source ~/.bashrc
+    curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh > /tmp/mp_new.sh && awk '/^# mp function - version marker start/{skip=1} skip{next} /^# mp function - version marker end/{skip=0; next} 1' ~/.bashrc > /tmp/bashrc_clean && mv /tmp/bashrc_clean ~/.bashrc && cat /tmp/mp_new.sh >> ~/.bashrc && rm /tmp/mp_new.sh && source ~/.bashrc
 }
 # mp function - version marker end
