@@ -91,7 +91,3 @@ The script creates the following files in your project:
 - `curl` command available
 - `bash` shell
 - VS Code with Dev Containers extension for usage
-
-## Contributing
-
-Feel free to submit issues or pull requests to add support for additional development environments.
