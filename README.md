@@ -16,7 +16,29 @@ The devcontainers are pre-configured to use Claude Code. This assumes you are us
 > [!WARNING]
 > The devcontainer has network access! Be very careful with `cc`, as it can wreck havoc!
 
-## Quick Start
+## Quick start
+
+```bash
+mp project-name project-type
+```
+
+- Creates a new project folder in `~/LinuxProjects` (yup, hardcoded for now, this is my setup)
+- inits a git repo
+- Setups up devcontainer
+- Opens VS Code
+
+### Supported project types
+
+- bun
+- dotnet8
+
+### Adding mp command to your shell
+
+```bash
+curl -sSL https://raw.githubusercontent.com/eriksacre/devcontainers/main/mp_command.sh >> ~/.bash_profile && source ~/.bash_profile
+```
+
+## The code behind devcontainer setup
 
 Use this one-liner to download and execute the setup script in your project directory:
 
