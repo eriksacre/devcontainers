@@ -3,7 +3,7 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "forwardPorts": [3000],
+  "forwardPorts": [8080],
   "remoteUser": "devuser",
   "customizations": {
     "vscode": {
@@ -19,12 +19,16 @@
     }
   },
   "mounts": [
-    "source=${env:HOME}/.claude,target=/home/devuser/.claude,type=bind"
+    "source=${env:HOME}/.claude,target=/home/devuser/.claude,type=bind",
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
   "remoteEnv": {
     "CLAUDE_CONFIG_DIR": "/home/devuser/.claude"
   },
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "version": "latest",
+      "enableNonRootDocker": "true"
+    }
   }
 }

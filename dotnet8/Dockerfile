@@ -18,14 +18,16 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     rm -rf /var/lib/apt/lists/*
 
 # Cache busting argument - change this value to force rebuild
-ARG CACHE_BUST=1
+ARG CACHE_BUST=3
 
 # Install Claude Code
 RUN npm install -g @anthropic-ai/claude-code
 
-# Create a non-root user
-RUN useradd -m devuser && \
+# Create docker group with host GID and create user
+RUN groupadd -g 1001 docker && \
+    useradd -m devuser && \
     mkdir -p /home/devuser/.local && \
+    usermod -aG docker devuser && \
     chown -R devuser:devuser /home/devuser && \
     chsh -s $(which bash) devuser
 
@@ -39,4 +41,4 @@ RUN echo 'export PS1="\e[01;32m\u\e[m:\e[01;34m\w\e[m\$ "' >> /home/devuser/.bas
 ENV DEVCONTAINER=true
 WORKDIR /home/devuser
 
-EXPOSE 3000
+EXPOSE 8080
