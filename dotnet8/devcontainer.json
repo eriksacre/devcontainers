@@ -14,7 +14,8 @@
         "EditorConfig.EditorConfig",
         "ms-vscode.vscode-node-azure-pack",
         "yzhang.markdown-all-in-one",
-        "telesoho.vscode-markdown-paste-image"
+        "telesoho.vscode-markdown-paste-image",
+        "MermaidChart.vscode-mermaid-chart"
       ]
     }
   },

@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     unzip \
     software-properties-common \
+    cloc \
+    jq \
     && rm -rf /var/lib/apt/lists/*
 
 # Node.js 22
@@ -18,7 +20,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && \
     rm -rf /var/lib/apt/lists/*
 
 # Cache busting argument - change this value to force rebuild
-ARG CACHE_BUST=3
+ARG CACHE_BUST=7
 
 # Install Claude Code
 RUN npm install -g @anthropic-ai/claude-code
