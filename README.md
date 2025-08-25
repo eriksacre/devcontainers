@@ -39,6 +39,21 @@ mp project-name project-type
 - **bun** - Bun JavaScript runtime container
 - **dotnet8** - .NET 8 development container
 
+#### Recommended C# project settings
+
+```xml
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors> <!-- optional but strict -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel> <!-- keep rules current -->
+  </PropertyGroup>
+</Project>
+```
+
 ### Adding mp command to your shell
 
 ```bash
