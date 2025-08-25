@@ -9,10 +9,6 @@ This is a set of devcontainers I use for work & experimentation.
 - Claude Code is installed in WSL2. This is relevant as we will mount the `.claude` folder in devcontainers
 - Using VS Code as my editor (actually VS Code Insiders, but 'code' is defined as alias)
 
-## TODO
-
-- Update bun devcontainer to support docker outside of docker
-
 ## Claude Code
 
 The devcontainers are pre-configured to use Claude Code. This assumes you are using WSL2 on Windows, although it probably works on any *nix environment. It mounts your user `.claude` folder into the container to reuse settings & authentication tokens.
@@ -22,6 +18,10 @@ The devcontainers are pre-configured to use Claude Code. This assumes you are us
 
 > [!WARNING]
 > The devcontainer has network access! Be very careful with `cc`, as it can wreack havoc!
+
+## Docker outside of Docker
+
+The devcontainers are configured to use Docker outside of Docker, which means you can use the docker command in the container, and it actually uses the host's Docker. By having Docker outside of Docker we can also build a container for the application under development.
 
 ## Quick start
 
