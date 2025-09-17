@@ -7,6 +7,7 @@ This is a set of devcontainers I use for work & experimentation.
 - Windows 11 with WSL2
 - Using Bash in WSL2
 - Claude Code is installed in WSL2. This is relevant as we will mount the `.claude` folder in devcontainers
+- Codex CLI is installed in WSL2. This is relevant as we will mount the `.codex` folder in devcontainers
 - Using VS Code as my editor (actually VS Code Insiders, but 'code' is defined as alias)
 
 ## Claude Code
@@ -18,6 +19,12 @@ The devcontainers are pre-configured to use Claude Code. This assumes you are us
 
 > [!WARNING]
 > The devcontainer has network access! Be very careful with `cc`, as it can wreack havoc!
+
+## Codex CLI
+
+The devcontainers are pre-configured to use Codex CLI. This assumes you are using WSL2 on Windows, although it probably works on any *nix environment. It mounts your user `.codex` folder into the container to reuse settings & authentication tokens.
+
+- Alias `cx`: `codex --search`
 
 ## Docker outside of Docker
 

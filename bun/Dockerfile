@@ -26,6 +26,9 @@ ARG CACHE_BUST=1
 # Claude code
 RUN npm install -g @anthropic-ai/claude-code
 
+# Install Codex CLI
+RUN npm install -g @openai/codex
+
 # Create docker group with host GID and create user
 RUN groupadd -g 1001 docker && \
     mkdir -p /home/bun/.local && \
@@ -38,7 +41,8 @@ USER bun
 # Set up bash prompt and aliases
 RUN echo 'export PS1="\e[01;32m\u\e[m:\e[01;34m\w\e[m\$ "' >> /home/bun/.bashrc \
     && echo 'alias c="claude"' >> /home/bun/.bashrc \
-    && echo 'alias cc="claude --dangerously-skip-permissions"' >> /home/bun/.bashrc
+    && echo 'alias cc="claude --dangerously-skip-permissions"' >> /home/bun/.bashrc \
+    && echo 'alias cx="codex --search"' >> /home/bun/.bashrc
 
 ENV DEVCONTAINER=true
 WORKDIR /workspace

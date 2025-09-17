@@ -21,6 +21,7 @@
   },
   "mounts": [
     "source=${env:HOME}/.claude,target=/home/devuser/.claude,type=bind",
+    "source=${env:HOME}/.codex,target=/home/devuser/.codex,type=bind",
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
   "remoteEnv": {
