@@ -258,6 +258,9 @@ dotnet_diagnostic.CA1858.severity = warning
 # CA2008: Do not create tasks without passing a TaskScheduler
 dotnet_diagnostic.CA2008.severity = warning
 
+# Suppress CA2007 (ConfigureAwait rule) for non-library code
+dotnet_diagnostic.CA2007.severity = none
+
 # CA2009: Do not call ToImmutableCollection on an ImmutableCollection value
 dotnet_diagnostic.CA2009.severity = warning
 
@@ -359,6 +362,15 @@ dotnet_diagnostic.IDE0300.severity = warning
 # IDE2000: Disallow multiple blank lines
 dotnet_style_allow_multiple_blank_lines_experimental = false
 dotnet_diagnostic.IDE2000.severity = warning
+
+# Overrides for tests
+[tests/**.cs]
+
+# Suppress CA1707 (identifier name rule) for test methods using underscores
+dotnet_diagnostic.CA1707.severity = none
+
+# Suppress CA1062 (null validation) for test helper methods
+dotnet_diagnostic.CA1062.severity = none
 
 # JavaScript and TypeScript files
 [*.{js,ts,jsx,tsx}]
